@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Mail, Send } from "lucide-react";
 import { SOCIAL_LINKS } from "@/lib/constants";
+import { useClickSound } from "@/lib/useClickSound";
 import Link from "next/link";
 
 const iconMap: Record<string, React.ReactNode> = {
@@ -21,6 +22,8 @@ const iconMap: Record<string, React.ReactNode> = {
 };
 
 export function SocialLinks() {
+  const playClick = useClickSound();
+
   return (
     <div className="absolute bottom-6 md:bottom-8 left-0 right-0 flex items-center justify-center gap-4 md:gap-6 z-20">
       {SOCIAL_LINKS.map((link, index) => (
@@ -34,6 +37,7 @@ export function SocialLinks() {
             href={link.url}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={playClick}
             className="flex items-center justify-center w-10 h-10 md:w-12 md:h-12 rounded-full border border-dashed border-white/20 text-white/60 hover:text-sky-400 hover:border-sky-400/50 hover:bg-sky-400/5 transition-all duration-300 hover:scale-105 hover:shadow-[0_0_15px_rgba(56,189,248,0.3)]"
           >
             {iconMap[link.name]}

@@ -3,9 +3,18 @@ export interface FeatureSlide {
   title: string;
   description: string;
   image: string;
+  isIntro?: boolean;
 }
 
 export const FEATURES: FeatureSlide[] = [
+  {
+    id: "what-is-iceberg",
+    title: "WHAT IS ICEBERG TERMINAL?",
+    description:
+      "A market intelligence and research platform built to monitor markets, track developments, analyze data, and support research workflows.",
+    image: "",
+    isIntro: true,
+  },
   {
     id: "sector-pulse",
     title: "SECTOR PULSE",
@@ -28,3 +37,4 @@ export const FEATURES: FeatureSlide[] = [
     image: "/feature-4.png",
   },
 ];
+
